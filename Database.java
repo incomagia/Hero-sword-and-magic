@@ -29,13 +29,11 @@ public class Database {
     }
 
     public static void generateField() {
-        // Инициализация массива следов передвижения юнитов
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
                 movementTrail[row][col] = '0';
             }
         }
-        // Инициализация поля пустыми клетками
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
                 board[row][col] = '0';
@@ -56,7 +54,6 @@ public class Database {
         //player2Units.add(new Unit(Unit.UnitType.SWORDSMAN, 5, 12, 50, 70, 1, new int[]{14, 13}, 2));
         player2Units.add(new Unit(Unit.UnitType.CAVALRY, 8, 10, 35, 100, 1, new int[]{7, 9}, 2));
 
-        // Размещение юнитов на поле
         for (Unit unit : player1Units) {
             board[unit.location[0]][unit.location[1]] = getUnitSymbol(unit);
         }
@@ -86,7 +83,7 @@ public class Database {
     public static void clearMovementTrail() {
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLS; col++) {
-                movementTrail[row][col] = '0'; // Очищаем следы движения
+                movementTrail[row][col] = '0';
             }
         }
     }
