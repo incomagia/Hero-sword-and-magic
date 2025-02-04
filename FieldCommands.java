@@ -46,12 +46,12 @@ public class FieldCommands {
     }
 
     public static void deleteObject(int x, int y) {
-        Database.board[x][y] = '0'; // Удаляем объект с клетки
+        Database.board[x][y] = '0';
         Database.player1Units.removeIf(unit -> unit.location[0] == x-1 && unit.location[1] == y-1);
         Database.player2Units.removeIf(unit -> unit.location[0] == x-1 && unit.location[1] == y-1);
     }
 
     public static void placeRock(int x, int y) {
-        Database.board[x-1][y-1] = '#'; // Устанавливаем камень
+        Database.board[x-1][y-1] = '#';
     }
 }
