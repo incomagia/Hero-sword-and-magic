@@ -24,11 +24,11 @@ public class UnitCommands {
 
     public static boolean moveUnit(int targetX, int targetY) {
         Unit unit = Database.initiativeOrder.get(Database.currentTurnIndex);
-        int[] targetPos = {targetX - 1, targetY - 1}; // Коррекция на индекс массива
+        int[] targetPos = {targetX - 1, targetY - 1};
         int[][] path = findOptimalPath(unit, targetPos);
         if (path.length == 0) return false;
 
-        int maxSteps = unit.speed; // Юнит может пройти максимум своё количество шагов
+        int maxSteps = unit.speed;
         int steps = Math.min(maxSteps, path.length);
 
         for (int i = 0; i < steps; i++) {
@@ -141,7 +141,6 @@ public class UnitCommands {
                     if (distances[newRow][newCol] == distances[current[0]][current[1]] - 1) {
                         current = new int[]{newRow, newCol};
     
-                        // Начинаем рисовать 'x' только после первых `stepsToSkip` шагов
                         if (stepsToSkip <= 0) {
                             Database.movementTrail[newRow][newCol] = 'x';
                         } else {
