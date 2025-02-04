@@ -12,17 +12,16 @@ public class Unit {
     public int cost;
     public boolean isAlive;
     public int attackRange;
-    public int[] location; // [row, col] coordinates
-    public int playerOwnership; // 1 for Player 1, 2 for Player 2
+    public int[] location; // [row, col]
+    public int playerOwnership;
 
-    // Constructor
     public Unit(UnitType type, int speed, int attackDamage, int health, int cost, int attackRange, int[] location, int playerOwnership) {
         this.type = type;
         this.speed = speed;
         this.attackDamage = attackDamage;
         this.health = health;
         this.cost = cost;
-        this.isAlive = true; // All units start as alive
+        this.isAlive = true;
         this.attackRange = attackRange;
         this.location = location;
         this.playerOwnership = playerOwnership;
@@ -62,7 +61,6 @@ public class Unit {
         UnitType.CAVALRY, 1
     );
 
-    // Factory method for creating units with default values
     public static Unit createUnit(UnitType type, int[] location, int playerOwnership) {
         switch (type) {
             case ARCHER:
